@@ -7,7 +7,7 @@ snippet: |
   <input type="email" placeholder="Email address">
 correctAnswer: "There's no associated <label>, so the field has no accessible name once the placeholder disappears — a screen reader may announce nothing more than \"edit text.\""
 distractors:
-  - The input should use type="text" instead of type="email".
-  - Placeholder text should always be lowercase.
-  - Nothing is wrong with this example.
+  - The input uses type="email" instead of type="text", which restricts what kind of values a user is able to type into the field.
+  - Placeholder text is written with a capital letter instead of being lowercase, which is inconsistent with typical form conventions.
+  - Nothing is wrong here — placeholder text is commonly used instead of a label to keep forms looking clean and minimal.
 ---

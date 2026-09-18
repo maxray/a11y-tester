@@ -8,7 +8,7 @@ snippet: |
   <input type="email" id="email">
 correctAnswer: "The for/id pairing programmatically associates the label with the input, so a screen reader announces \"Email address, edit text\" when it receives focus."
 distractors:
-  - This passes only because the label text matches the field's purpose.
-  - The label must come after the input, not before it.
-  - This still fails because it also needs a placeholder.
+  - This passes only because the visible label text happens to match the purpose of the field being described.
+  - The label element needs to come after the input it describes, not before it, for the association to work.
+  - This still fails because a placeholder should also be added alongside the label to hint at the expected input format.
 ---

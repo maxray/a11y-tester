@@ -9,7 +9,7 @@ snippet: |
   </head>
 correctAnswer: "The title describes both the page's purpose (Contact Us) and the site it belongs to, so it's meaningful when announced or shown in a tab."
 distractors:
-  - This passes only because it includes the company name.
-  - The em dash character is not accessible to screen readers.
-  - This still fails because the title should match the H1 exactly.
+  - This passes only because the title happens to include the company name at the end, not because of its overall structure.
+  - The em dash character used to separate the two parts of the title isn't announced correctly by screen readers.
+  - This still fails because the title should exactly match the page's visible h1 heading, word for word.
 ---

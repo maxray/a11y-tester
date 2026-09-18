@@ -4,7 +4,8 @@ import { shuffle } from "../shuffle";
 const QUESTIONS_PER_GAME = 10;
 
 function buildQuestion(example) {
-  const passTrap = "Nothing — this correctly meets the criterion.";
+  const passTrap =
+    "Nothing — this actually meets the criterion, even though it looks like the other examples on this page.";
   const correctAnswer = example.correctAnswer;
   const wrongOptions =
     example.type === "pass"

@@ -10,7 +10,7 @@ snippet: |
   }
 correctAnswer: "The default outline is replaced with a clearly visible custom style, so keyboard focus is still obvious — it's restyled, not removed."
 distractors:
-  - This passes only because the color chosen is blue.
-  - focus-visible is not supported by any browser.
-  - This still fails because outline-offset should be 0.
+  - This passes only because the color chosen for the outline happens to be blue rather than another color.
+  - The focus-visible pseudo-class isn't supported in any modern browser, so this style will never actually be applied.
+  - This still fails because the outline-offset value should always be set to zero instead of a positive number.
 ---

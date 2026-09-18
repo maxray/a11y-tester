@@ -8,7 +8,7 @@ snippet: |
        alt="Bar chart: quarterly sales rose from $2M in Q1 to $3.4M in Q4">
 correctAnswer: The alt text describes the actual content and meaning of the chart, not just that an image exists.
 distractors:
-  - The alt text is too long and should be shortened to one word.
-  - This still fails because images should never be used for data.
-  - The image needs a caption element instead of alt text.
+  - This still fails because alt text should never exceed a couple of words, and this description is far too long to be useful.
+  - This still fails because charts and graphs should always be built with an accessible data table instead of an image.
+  - This passes only because the image also has a visible caption underneath it describing the same information.
 ---

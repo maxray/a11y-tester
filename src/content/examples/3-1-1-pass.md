@@ -10,7 +10,7 @@ snippet: |
   </html>
 correctAnswer: "lang=\"en\" tells assistive technology the page's primary language, so it applies the correct pronunciation and voice."
 distractors:
-  - This passes only because "en" is the most common language code.
-  - The lang attribute should be on the body element, not html.
-  - This still fails because lang must include a region, like en-US.
+  - This passes only because "en" happens to be the most widely used language code on the web.
+  - The lang attribute should be set on the body element instead of the html element for it to take effect.
+  - This still fails because the lang attribute needs to include a region code, such as en-US, to be valid.
 ---
