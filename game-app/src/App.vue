@@ -40,7 +40,8 @@ onMounted(() => {
 .game__best {
   margin-top: 1.5rem;
   font-size: 0.9rem;
-  color: #777;
+  /* #595959 on white is ~7:1, comfortably above the 4.5:1 minimum */
+  color: #595959;
 }
 
 .game-question__snippet {
@@ -81,6 +82,22 @@ onMounted(() => {
 .game-question__option:focus-visible {
   outline: 3px solid #1d4ed8;
   outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* #1d4ed8 drops to ~2.8:1 against a dark page background, well under
+     the 3:1 minimum for UI component contrast (WCAG 1.4.11). */
+  .game-question__option:hover:not(:disabled) {
+    border-color: #8ab4f8;
+  }
+
+  .game-question__option:focus-visible {
+    outline-color: #8ab4f8;
+  }
+
+  .game-question__next:focus-visible {
+    outline-color: #8ab4f8;
+  }
 }
 
 .game-question__option:disabled {
