@@ -5,7 +5,7 @@ const QUESTIONS_PER_GAME = 10;
 
 function buildQuestion(example) {
   const passTrap =
-    "Nothing — this actually meets the criterion, even though it looks like the other examples on this page.";
+    "Nothing — this snippet already meets the criterion, even though a couple of details might look suspicious at first glance.";
   const correctAnswer = example.correctAnswer;
   const wrongOptions =
     example.type === "pass"
@@ -20,7 +20,6 @@ function buildQuestion(example) {
   return {
     id: example.id,
     ruleId: example.ruleId,
-    title: example.title,
     type: example.type,
     snippetLang: example.snippetLang,
     snippet: example.snippet,

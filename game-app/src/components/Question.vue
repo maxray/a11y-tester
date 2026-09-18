@@ -21,7 +21,6 @@ function optionClass(option) {
       {{ game.progressLabel }} · Score: {{ game.score }}
     </p>
 
-    <h2 class="game-question__title">{{ game.currentQuestion.title }}</h2>
     <pre class="game-question__snippet"><code>{{ game.currentQuestion.snippet }}</code></pre>
 
     <p id="question-prompt">What's going on here?</p>
