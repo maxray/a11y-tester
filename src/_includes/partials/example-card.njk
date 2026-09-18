@@ -1,0 +1,9 @@
+<article class="example-card example-card--{{ example.data.type }}">
+  <h3 class="example-card__label">
+    <span class="badge badge--{{ example.data.type }}">{{ example.data.type }}</span>
+    {{ example.data.title }}
+  </h3>
+  {% set lang = example.data.snippetLang or "html" %}
+  <pre><code class="language-{{ lang }}">{{ example.data.snippet }}</code></pre>
+  <p class="example-card__answer"><strong>{% if example.data.type == "fail" %}What's wrong:{% else %}Why it passes:{% endif %}</strong> {{ example.data.correctAnswer }}</p>
+</article>

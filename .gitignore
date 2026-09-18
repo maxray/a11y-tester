@@ -1,0 +1,7 @@
+node_modules/
+_site/
+game-app/dist/
+game-app/node_modules/
+.cache/
+.env
+.DS_Store

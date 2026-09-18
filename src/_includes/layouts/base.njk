@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or rule.data.title or "A11y Tester" }} · A11y Tester</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+      <a class="site-nav__brand" href="/">A11y Tester</a>
+      <a href="/">Rules</a>
+      <a href="/game/">Play the game</a>
+    </nav>
+  </header>
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <p>A reference for WCAG success criteria, and a game to test how well you can spot them.</p>
+  </footer>
+</body>
+</html>

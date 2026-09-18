@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.rule
+  size: 1
+  alias: rule
+permalink: "/rules/{{ rule.data.id | slugify }}/index.html"
+---
+<p><a href="/">&larr; All rules</a></p>
+
+<div class="rule-card__meta">{{ rule.data.id }} · Level {{ rule.data.level }} · {{ rule.data.principle | capitalize }}</div>
+<h1>{{ rule.data.title }}</h1>
+<p>{{ rule.data.summary }}</p>
+
+{{ rule.templateContent | safe }}
+
+<h2>Examples</h2>
+{% for example in collections.example | examplesForRule(rule.data.id) %}
+  {% include "partials/example-card.njk" %}
+{% endfor %}

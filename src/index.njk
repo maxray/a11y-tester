@@ -1,0 +1,45 @@
+---
+title: WCAG Rules
+layout: layouts/base.njk
+---
+<h1>WCAG Rules</h1>
+<p>Click a rule to see what it means and a real pass/fail example. Or <a href="/game/">play the game</a> to test yourself against 10 random examples.</p>
+
+<div class="filters" role="group" aria-label="Filter rules by principle">
+  <a href="#" data-filter="all" aria-current="true">All</a>
+  <a href="#" data-filter="perceivable">Perceivable</a>
+  <a href="#" data-filter="operable">Operable</a>
+  <a href="#" data-filter="understandable">Understandable</a>
+  <a href="#" data-filter="robust">Robust</a>
+</div>
+
+<ul class="rule-list" id="rule-list">
+  {% for rule in collections.rule %}
+  <li data-principle="{{ rule.data.principle }}">
+    <a class="rule-card" href="/rules/{{ rule.data.id | slugify }}/">
+      <div class="rule-card__meta">{{ rule.data.id }} · Level {{ rule.data.level }} · {{ rule.data.principle | capitalize }}</div>
+      <strong>{{ rule.data.title }}</strong>
+      <p>{{ rule.data.summary }}</p>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<script>
+  (function () {
+    var list = document.getElementById("rule-list");
+    var links = document.querySelectorAll(".filters a");
+    links.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        var filter = link.getAttribute("data-filter");
+        links.forEach(function (l) { l.removeAttribute("aria-current"); });
+        link.setAttribute("aria-current", "true");
+        list.querySelectorAll("li").forEach(function (item) {
+          var show = filter === "all" || item.getAttribute("data-principle") === filter;
+          item.style.display = show ? "" : "none";
+        });
+      });
+    });
+  })();
+</script>

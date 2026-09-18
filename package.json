@@ -1,0 +1,20 @@
+{
+  "name": "a11y-tester",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A WCAG reference site with an accessibility-spotting game",
+  "workspaces": [
+    "game-app"
+  ],
+  "scripts": {
+    "build:game": "npm run build -w game-app",
+    "build:site": "eleventy",
+    "build": "npm run build:game && npm run build:site",
+    "dev": "eleventy --serve",
+    "dev:full": "npm run build:game && eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+  }
+}

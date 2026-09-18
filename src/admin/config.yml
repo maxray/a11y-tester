@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://a11y-tester.netlify.app
+display_url: https://a11y-tester.netlify.app
+
+collections:
+  - name: rules
+    label: "WCAG Rules"
+    folder: "src/content/rules"
+    create: true
+    slug: "{{fields.id}}-{{fields.title}}"
+    identifier_field: title
+    fields:
+      - { label: "WCAG ID (e.g. 1.1.1)", name: "id", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Level"
+        name: "level"
+        widget: "select"
+        options: ["A", "AA", "AAA"]
+      - label: "Principle"
+        name: "principle"
+        widget: "select"
+        options: ["perceivable", "operable", "understandable", "robust"]
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Full explanation", name: "body", widget: "markdown" }
+
+  - name: examples
+    label: "Examples"
+    folder: "src/content/examples"
+    create: true
+    slug: "{{fields.ruleId}}-{{fields.type}}-{{fields.title}}"
+    identifier_field: title
+    fields:
+      - label: "Rule"
+        name: "ruleId"
+        widget: "relation"
+        collection: "rules"
+        search_fields: ["title", "id"]
+        display_fields: ["id", "title"]
+        value_field: "id"
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options: ["pass", "fail"]
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Snippet language"
+        name: "snippetLang"
+        widget: "select"
+        options: ["html", "css", "js"]
+        default: "html"
+      - label: "Code snippet"
+        name: "snippet"
+        widget: "code"
+        default_language: "html"
+        output_code_only: true
+      - label: "Correct answer"
+        name: "correctAnswer"
+        widget: "text"
+        hint: "What's actually wrong (for a fail) or why it passes (for a pass)."
+      - label: "Distractors"
+        name: "distractors"
+        widget: "list"
+        field: { label: "Distractor", name: "distractor", widget: "string" }
